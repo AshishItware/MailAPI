@@ -24,11 +24,8 @@ var app = builder.Build();
 
 
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Middleware order matters
 app.UseCors("AllowAngular");
