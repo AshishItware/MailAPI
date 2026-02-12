@@ -21,10 +21,15 @@ namespace MailAPI.Services
 
             using var client = new SmtpClient();
 
+            //await client.ConnectAsync(
+            //    settings["SmtpServer"],
+            //    int.Parse(settings["SmtpPort"]),
+            //    SecureSocketOptions.StartTls);
             await client.ConnectAsync(
                 settings["SmtpServer"],
-                int.Parse(settings["SmtpPort"]),
-                SecureSocketOptions.StartTls);
+                465,
+                SecureSocketOptions.SslOnConnect);
+
 
             await client.AuthenticateAsync(
                 settings["SenderEmail"],
