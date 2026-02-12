@@ -19,7 +19,10 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod());
 });
 
+
 var app = builder.Build();
+
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -37,5 +40,8 @@ app.UseAuthorization();
 app.MapGet("/", () => Results.Redirect("/swagger"));
 
 app.MapControllers();
+
+app.Urls.Add("http://0.0.0.0:10000");
+
 
 app.Run();
