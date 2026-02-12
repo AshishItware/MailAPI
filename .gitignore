@@ -1,0 +1,17 @@
+# Build folders
+bin/
+obj/
+
+# IDE files
+.vs/
+.vscode/
+
+# User secrets
+appsettings.Development.json
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
